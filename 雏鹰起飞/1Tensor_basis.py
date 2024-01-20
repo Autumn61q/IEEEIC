@@ -70,7 +70,7 @@ exam7 * exam8
 # 系统会尝试将其复制到一个共同的形状。例如a的第0维是3, b的第0维是1，那么 a + b这个操作会将b沿着第0维复制3遍。
 
 
-a = torch.arange(0, 3).view(3, 1)
+a = torch.arange(0, 3).view(3, 1)  # .arange 就是创建一个一维数组。参数是起点、终点、步幅
 b = torch.arange(0, 2).view(1, 2)
 print("a:", a)
 print("b:", b)
