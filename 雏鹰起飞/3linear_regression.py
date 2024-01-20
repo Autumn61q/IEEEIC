@@ -15,8 +15,8 @@ plt.show()
 
 
 # 为了能够自动求导，我们要将 x, y 变成 Variable 对象
-X = Variable(x) # PyTorch中的 Variable 默认是允许自动求导的，所以 requires_grad=True 可以不加
-Y = Variable(y) # 同上
+X = Variable(x) 
+Y = Variable(y)
 
 
 # 定义参数初始化函数
@@ -37,7 +37,7 @@ def square_loss(y_hat, Y):
 
 # 使用梯度来更新参数
 def update_parameters(parameters, lr):
-    parameters["W"].data -= lr * parameters["W"].grad.data
+    parameters["W"].data -= lr * parameters["W"].grad.data # 如果.data没有加上的话就会有RuntimeError
     parameters["b"].data -= lr * parameters["b"].grad.data
     return # 关于这里为什么不用返回更改后的parameters,可以看https://blog.csdn.net/weixin_45819273/article/details/122526265
 
