@@ -190,6 +190,7 @@ M, input_size, hidden_size, output_size = 64, 1000, 100, 10
 
 # 生成随机数当作样本，同时用Variable 来包装这些数据，设置 requires_grad=False 表示在方向传播的时候，
 # 我们不需要求这几个 Variable 的导数
+# 这个地方不知道怎么回事，如果x和y只是普通的张量代码也能跑，不过loss值会越训越大
 x = Variable(torch.randn(M, input_size))
 y = Variable(torch.randn(M, output_size))
 
